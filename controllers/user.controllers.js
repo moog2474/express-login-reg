@@ -56,7 +56,12 @@ exports.login = async (req, res) => {
   const user = await userModel.findOne({ email });
 
   if (user && (await bcrypt.compare(password, user.password))) {
-    res.status(200).send({ status: true, data: user, message: "Success" });
+    const token = jwt.sign({user: user}, process.env.TOKEN_SECRET_KEY, {expiresIn: "2h"});
+
+    res
+    .status(200)
+    .send({ status: true, data: user, message: "Success", token });
+    
     return;
   } else {
     res.status(400).send({
@@ -79,10 +84,12 @@ exports.getAll = async (req, res) => {
       status: true,
       result,
     });
+    return
   } else {
     res.status(500).send({
       status: false,
       message: "Baazad hereglegch bhgui bna",
     });
+    return
   }
 };

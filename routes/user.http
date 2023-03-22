@@ -4,8 +4,8 @@ POST http://localhost:9000/api/user
 Content-Type: application/json
 
 {
-  "email":"Oyuka1@gmail.com",
-  "password":"qweqwe"
+  "email":"moog@gmail.com",
+  "password":"moog"
 }
 
 ###
@@ -18,7 +18,8 @@ Content-Type: application/json
   "password":"qweqwe"
 }
 
-
+###
+GET  http://localhost:9000/api/userall
 
 
 

@@ -10,7 +10,10 @@ const userSchema = mongooose.Schema({
     type: String,
     required: [true, "Please provide a password!"],
   },
-});
+  
+},
+{collection: 'newuser'}
+);
 
 const User = mongooose.model("User", userSchema);
 
