@@ -1,0 +1,24 @@
+###
+
+POST http://localhost:9000/api/user
+Content-Type: application/json
+
+{
+  "email":"Oyuka1@gmail.com",
+  "password":"qweqwe"
+}
+
+###
+
+POST http://localhost:9000/api/login
+Content-Type: application/json
+
+{
+  "email":"Oyuka1@gmail.com",
+  "password":"qweqwe"
+}
+
+
+
+
+
